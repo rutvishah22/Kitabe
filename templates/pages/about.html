@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<section class="about-section">
+    <h1>About Our Bookstore</h1>
+    
+    <div class="about-content">
+        <div class="about-image">
+            <img src="/static/img/bookstore.jpg" alt="Our Bookstore" onerror="this.src='/static/img/placeholder.jpg'">
+        </div>
+        
+        <div class="about-text">
+            <h2>Our Story</h2>
+            <p>
+                Our bookstore was founded in 2023 with a simple mission: to connect readers with books available in their local area. 
+                What started as a small passion project has grown into a platform that serves book lovers across the country.
+            </p>
+            
+            <h2>Our Mission</h2>
+            <p>
+                We believe that books should be accessible to everyone. Our platform helps readers discover books that are available 
+                in their city, making it easier to find and purchase the books they love.
+            </p>
+            
+            <h2>Our Team</h2>
+            <p>
+                Our team consists of book lovers, tech enthusiasts, and customer service professionals who are dedicated to 
+                providing the best possible experience for our users.
+            </p>
+        </div>
+    </div>
+    
+    <div class="timeline">
+        <h2>Our Journey</h2>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">2023</div>
+            <div class="timeline-content">
+                <h3>The Beginning</h3>
+                <p>Our website was launched with a small collection of books and limited city coverage.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">2024</div>
+            <div class="timeline-content">
+                <h3>Expansion</h3>
+                <p>We expanded our services to more cities and added thousands of new books to our collection.</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">2025</div>
+            <div class="timeline-content">
+                <h3>Today</h3>
+                <p>We continue to grow and improve our platform to better serve book lovers everywhere.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

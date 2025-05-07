@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+<section class="book-detail">
+    <div class="book-detail-container">
+        <div class="book-image">
+            {% if book.image %}
+                <img src="{{ book.image }}" alt="{{ book.title }}" onerror="this.src='/static/img/default_book.jpg'">
+            {% else %}
+                <img src="/static/img/default_book.jpg" alt="{{ book.title }}">
+            {% endif %}
+        </div>
+        
+        <div class="book-info">
+            <h1>{{ book.title }}</h1>
+            <p class="book-author">by {{ book.author }}</p>
+            <p class="book-price">${{ book.price }}</p>
+            
+            <div class="book-description">
+                <h2>Description</h2>
+                {% if book.description %}
+                    <p>{{ book.description|safe }}</p>
+                {% else %}
+                    <p>No description available for this book.</p>
+                {% endif %}
+            </div>
+            
+            <div class="book-availability">
+                <h2>Availability</h2>
+                {% if book.available_cities.all %}
+                    <p>This book is available in the following cities:</p>
+                    <ul class="city-list">
+                        {% for city in book.available_cities.all %}
+                            <li>{{ city.name }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>This book is not currently available in any city. Please check back later.</p>
+                {% endif %}
+            </div>
+            
+            {% if user.is_authenticated %}
+                <div class="book-actions">
+                    <a href="{% url 'add_to_cart' book.id %}" class="btn btn-primary">Add to Cart</a>
+                    <a href="{% url 'book_list' %}" class="btn btn-secondary">Back to Books</a>
+                </div>
+            {% else %}
+                <div class="book-actions">
+                    <p>Please <a href="{% url 'login' %}">login</a> to add this book to your cart.</p>
+                    <a href="{% url 'book_list' %}" class="btn btn-secondary">Back to Books</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

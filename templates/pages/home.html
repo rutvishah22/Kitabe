@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Our Bookstore</h1>
+        <p>Discover books available in your city and order them online.</p>
+        <a href="{% url 'book_list' %}" class="btn btn-primary">Browse Books</a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <div class="feature-icon">📚</div>
+        <h2>Extensive Collection</h2>
+        <p>Browse through thousands of books across various genres.</p>
+    </div>
+    <div class="feature">
+        <div class="feature-icon">📍</div>
+        <h2>Local Availability</h2>
+        <p>Check if books are available in your city before ordering.</p>
+    </div>
+    <div class="feature">
+        <div class="feature-icon">🚚</div>
+        <h2>Fast Delivery</h2>
+        <p>Get your favorite books delivered to your doorstep.</p>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Join Our Community</h2>
+    <p>Sign up today to get personalized book recommendations and special offers.</p>
+    <a href="{% url 'register' %}" class="btn btn-secondary">Sign Up Now</a>
+</section>
+{% endblock %}
