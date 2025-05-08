@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2_c7k+qx6!l6gpk2r%&36oi54d2yf4lm5q851ao^-_8aeyz3b@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["kitabe.pythonanywhere.com"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -108,6 +108,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
